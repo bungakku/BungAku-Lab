@@ -1,0 +1,16 @@
+{
+  "name": "bungaku-lab",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Reusable WordPress test lab: PHP, MariaDB, WordPress core, Playwright.",
+  "license": "GPL-2.0-or-later",
+  "engines": { "node": ">=20" },
+  "scripts": {
+    "doctor": "bin/lab doctor",
+    "test": "bin/lab test all"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.63.0",
+    "axe-core": "4.14.1"
+  }
+}

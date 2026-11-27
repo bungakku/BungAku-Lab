@@ -1,0 +1,1641 @@
+{
+    "settings": {
+        "bungaku_theme_blog_layout": {
+            "type": "theme_mod",
+            "default": "classic",
+            "transport": "refresh",
+            "capability": "edit_theme_options",
+            "sanitize": "bungaku_theme_sanitize_blog_layout"
+        },
+        "bungaku_theme_body_font_family": {
+            "type": "theme_mod",
+            "default": "default",
+            "transport": "refresh",
+            "capability": "edit_theme_options",
+            "sanitize": "bungaku_theme_sanitize_body_font_family"
+        },
+        "bungaku_theme_body_font_size_desktop": {
+            "type": "theme_mod",
+            "default": 16,
+            "transport": "refresh",
+            "capability": "edit_theme_options",
+            "sanitize": "absint"
+        },
+        "bungaku_theme_body_font_size_mobile": {
+            "type": "theme_mod",
+            "default": 14,
+            "transport": "refresh",
+            "capability": "edit_theme_options",
+            "sanitize": "absint"
+        },
+        "bungaku_theme_body_font_size_tablet": {
+            "type": "theme_mod",
+            "default": 15,
+            "transport": "refresh",
+            "capability": "edit_theme_options",
+            "sanitize": "absint"
+        },
+        "bungaku_theme_body_line_height": {
+            "type": "theme_mod",
+            "default": "1.6",
+            "transport": "refresh",
+            "capability": "edit_theme_options",
+            "sanitize": "bungaku_theme_sanitize_float"
+        },
+        "bungaku_theme_contact_email_color": {
+            "type": "theme_mod",
+            "default": "#333333",
+            "transport": "postMessage",
+            "capability": "edit_theme_options",
+            "sanitize": "sanitize_hex_color"
+        },
+        "bungaku_theme_contact_email_hover_color": {
+            "type": "theme_mod",
+            "default": "#0274be",
+            "transport": "postMessage",
+            "capability": "edit_theme_options",
+            "sanitize": "sanitize_hex_color"
+        },
+        "bungaku_theme_contact_phone_color": {
+            "type": "theme_mod",
+            "default": "#333333",
+            "transport": "postMessage",
+            "capability": "edit_theme_options",
+            "sanitize": "sanitize_hex_color"
+        },
+        "bungaku_theme_contact_phone_hover_color": {
+            "type": "theme_mod",
+            "default": "#0274be",
+            "transport": "postMessage",
+            "capability": "edit_theme_options",
+            "sanitize": "sanitize_hex_color"
+        },
+        "bungaku_theme_contact_text_size_mobile": {
+            "type": "theme_mod",
+            "default": "0.8",
+            "transport": "refresh",
+            "capability": "edit_theme_options",
+            "sanitize": "bungaku_theme_sanitize_float"
+        },
+        "bungaku_theme_contact_text_size_tablet": {
+            "type": "theme_mod",
+            "default": "0.85",
+            "transport": "refresh",
+            "capability": "edit_theme_options",
+            "sanitize": "bungaku_theme_sanitize_float"
+        },
+        "bungaku_theme_container_width": {
+            "type": "theme_mod",
+            "default": 1200,
+            "transport": "refresh",
+            "capability": "edit_theme_options",
+            "sanitize": "absint"
+        },
+        "bungaku_theme_content_display": {
+            "type": "theme_mod",
+            "default": "excerpt",
+            "transport": "refresh",
+            "capability": "edit_theme_options",
+            "sanitize": "bungaku_theme_sanitize_content_display"
+        },
+        "bungaku_theme_content_width": {
+            "type": "theme_mod",
+            "default": 75,
+            "transport": "refresh",
+            "capability": "edit_theme_options",
+            "sanitize": "absint"
+        },
+        "bungaku_theme_copyright_color": {
+            "type": "theme_mod",
+            "default": "#666666",
+            "transport": "refresh",
+            "capability": "edit_theme_options",
+            "sanitize": "sanitize_hex_color"
+        },
+        "bungaku_theme_copyright_text": {
+            "type": "theme_mod",
+            "default": "&copy; {YEAR} {SITE}. All rights reserved.",
+            "transport": "refresh",
+            "capability": "edit_theme_options",
+            "sanitize": "wp_kses_post"
+        },
+        "bungaku_theme_custom_description": {
+            "type": "theme_mod",
+            "default": "",
+            "transport": "refresh",
+            "capability": "edit_theme_options",
+            "sanitize": "wp_kses_post"
+        },
+        "bungaku_theme_description_size_desktop": {
+            "type": "theme_mod",
+            "default": "0.9",
+            "transport": "refresh",
+            "capability": "edit_theme_options",
+            "sanitize": "bungaku_theme_sanitize_float"
+        },
+        "bungaku_theme_description_size_mobile": {
+            "type": "theme_mod",
+            "default": "0.8",
+            "transport": "refresh",
+            "capability": "edit_theme_options",
+            "sanitize": "bungaku_theme_sanitize_float"
+        },
+        "bungaku_theme_description_size_tablet": {
+            "type": "theme_mod",
+            "default": "0.85",
+            "transport": "refresh",
+            "capability": "edit_theme_options",
+            "sanitize": "bungaku_theme_sanitize_float"
+        },
+        "bungaku_theme_dropdown_bg": {
+            "type": "theme_mod",
+            "default": "#ffffff",
+            "transport": "refresh",
+            "capability": "edit_theme_options",
+            "sanitize": "sanitize_hex_color"
+        },
+        "bungaku_theme_dropdown_hover_bg": {
+            "type": "theme_mod",
+            "default": "#f8f9fa",
+            "transport": "refresh",
+            "capability": "edit_theme_options",
+            "sanitize": "sanitize_hex_color"
+        },
+        "bungaku_theme_dropdown_hover_text": {
+            "type": "theme_mod",
+            "default": "#0274be",
+            "transport": "refresh",
+            "capability": "edit_theme_options",
+            "sanitize": "sanitize_hex_color"
+        },
+        "bungaku_theme_dropdown_text": {
+            "type": "theme_mod",
+            "default": "#3a3a3a",
+            "transport": "refresh",
+            "capability": "edit_theme_options",
+            "sanitize": "sanitize_hex_color"
+        },
+        "bungaku_theme_email": {
+            "type": "theme_mod",
+            "default": "info@yournonprofit.org",
+            "transport": "postMessage",
+            "capability": "edit_theme_options",
+            "sanitize": "sanitize_email"
+        },
+        "bungaku_theme_excerpt_length": {
+            "type": "theme_mod",
+            "default": 30,
+            "transport": "refresh",
+            "capability": "edit_theme_options",
+            "sanitize": "absint"
+        },
+        "bungaku_theme_facebook_url": {
+            "type": "theme_mod",
+            "default": "",
+            "transport": "postMessage",
+            "capability": "edit_theme_options",
+            "sanitize": "esc_url_raw"
+        },
+        "bungaku_theme_featured_image_size": {
+            "type": "theme_mod",
+            "default": "large",
+            "transport": "refresh",
+            "capability": "edit_theme_options",
+            "sanitize": "bungaku_theme_sanitize_image_size"
+        },
+        "bungaku_theme_footer_bg": {
+            "type": "theme_mod",
+            "default": "#f8f9fa",
+            "transport": "refresh",
+            "capability": "edit_theme_options",
+            "sanitize": "sanitize_hex_color"
+        },
+        "bungaku_theme_footer_direction": {
+            "type": "theme_mod",
+            "default": "horizontal",
+            "transport": "refresh",
+            "capability": "edit_theme_options",
+            "sanitize": "bungaku_theme_sanitize_footer_direction"
+        },
+        "bungaku_theme_footer_layout": {
+            "type": "theme_mod",
+            "default": "4",
+            "transport": "refresh",
+            "capability": "edit_theme_options",
+            "sanitize": "bungaku_theme_sanitize_footer_columns"
+        },
+        "bungaku_theme_footer_padding": {
+            "type": "theme_mod",
+            "default": 40,
+            "transport": "refresh",
+            "capability": "edit_theme_options",
+            "sanitize": "absint"
+        },
+        "bungaku_theme_grid_columns": {
+            "type": "theme_mod",
+            "default": "2",
+            "transport": "refresh",
+            "capability": "edit_theme_options",
+            "sanitize": "bungaku_theme_sanitize_grid_columns"
+        },
+        "bungaku_theme_hamburger_bg": {
+            "type": "theme_mod",
+            "default": "transparent",
+            "transport": "refresh",
+            "capability": "edit_theme_options",
+            "sanitize": "bungaku_theme_sanitize_color_transparent"
+        },
+        "bungaku_theme_hamburger_color": {
+            "type": "theme_mod",
+            "default": "#3a3a3a",
+            "transport": "refresh",
+            "capability": "edit_theme_options",
+            "sanitize": "sanitize_hex_color"
+        },
+        "bungaku_theme_hamburger_font_size": {
+            "type": "theme_mod",
+            "default": "1.2",
+            "transport": "refresh",
+            "capability": "edit_theme_options",
+            "sanitize": "bungaku_theme_sanitize_float"
+        },
+        "bungaku_theme_hamburger_height": {
+            "type": "theme_mod",
+            "default": 40,
+            "transport": "refresh",
+            "capability": "edit_theme_options",
+            "sanitize": "absint"
+        },
+        "bungaku_theme_hamburger_hover_bg": {
+            "type": "theme_mod",
+            "default": "transparent",
+            "transport": "refresh",
+            "capability": "edit_theme_options",
+            "sanitize": "bungaku_theme_sanitize_color_transparent"
+        },
+        "bungaku_theme_hamburger_hover_color": {
+            "type": "theme_mod",
+            "default": "#0274be",
+            "transport": "refresh",
+            "capability": "edit_theme_options",
+            "sanitize": "sanitize_hex_color"
+        },
+        "bungaku_theme_hamburger_width": {
+            "type": "theme_mod",
+            "default": 40,
+            "transport": "refresh",
+            "capability": "edit_theme_options",
+            "sanitize": "absint"
+        },
+        "bungaku_theme_header_bg": {
+            "type": "theme_mod",
+            "default": "#ffffff",
+            "transport": "refresh",
+            "capability": "edit_theme_options",
+            "sanitize": "sanitize_hex_color"
+        },
+        "bungaku_theme_header_padding": {
+            "type": "theme_mod",
+            "default": 15,
+            "transport": "refresh",
+            "capability": "edit_theme_options",
+            "sanitize": "absint"
+        },
+        "bungaku_theme_heading_color": {
+            "type": "theme_mod",
+            "default": "#333333",
+            "transport": "refresh",
+            "capability": "edit_theme_options",
+            "sanitize": "sanitize_hex_color"
+        },
+        "bungaku_theme_heading_font_family": {
+            "type": "theme_mod",
+            "default": "default",
+            "transport": "refresh",
+            "capability": "edit_theme_options",
+            "sanitize": "bungaku_theme_sanitize_heading_font_family"
+        },
+        "bungaku_theme_heading_size_desktop": {
+            "type": "theme_mod",
+            "default": "2",
+            "transport": "refresh",
+            "capability": "edit_theme_options",
+            "sanitize": "bungaku_theme_sanitize_float"
+        },
+        "bungaku_theme_heading_size_mobile": {
+            "type": "theme_mod",
+            "default": "1.5",
+            "transport": "refresh",
+            "capability": "edit_theme_options",
+            "sanitize": "bungaku_theme_sanitize_float"
+        },
+        "bungaku_theme_heading_size_tablet": {
+            "type": "theme_mod",
+            "default": "1.7",
+            "transport": "refresh",
+            "capability": "edit_theme_options",
+            "sanitize": "bungaku_theme_sanitize_float"
+        },
+        "bungaku_theme_hide_contact_mobile": {
+            "type": "theme_mod",
+            "default": false,
+            "transport": "postMessage",
+            "capability": "edit_theme_options",
+            "sanitize": "wp_validate_boolean"
+        },
+        "bungaku_theme_hide_contact_tablet": {
+            "type": "theme_mod",
+            "default": false,
+            "transport": "postMessage",
+            "capability": "edit_theme_options",
+            "sanitize": "wp_validate_boolean"
+        },
+        "bungaku_theme_hide_description_mobile": {
+            "type": "theme_mod",
+            "default": false,
+            "transport": "postMessage",
+            "capability": "edit_theme_options",
+            "sanitize": "wp_validate_boolean"
+        },
+        "bungaku_theme_hide_description_tablet": {
+            "type": "theme_mod",
+            "default": false,
+            "transport": "postMessage",
+            "capability": "edit_theme_options",
+            "sanitize": "wp_validate_boolean"
+        },
+        "bungaku_theme_instagram_url": {
+            "type": "theme_mod",
+            "default": "",
+            "transport": "postMessage",
+            "capability": "edit_theme_options",
+            "sanitize": "esc_url_raw"
+        },
+        "bungaku_theme_link_color": {
+            "type": "theme_mod",
+            "default": "#0274be",
+            "transport": "refresh",
+            "capability": "edit_theme_options",
+            "sanitize": "sanitize_hex_color"
+        },
+        "bungaku_theme_link_hover_color": {
+            "type": "theme_mod",
+            "default": "#3a3a3a",
+            "transport": "refresh",
+            "capability": "edit_theme_options",
+            "sanitize": "sanitize_hex_color"
+        },
+        "bungaku_theme_linkedin_url": {
+            "type": "theme_mod",
+            "default": "",
+            "transport": "postMessage",
+            "capability": "edit_theme_options",
+            "sanitize": "esc_url_raw"
+        },
+        "bungaku_theme_login_button_text": {
+            "type": "theme_mod",
+            "default": "Teacher/Student Login",
+            "transport": "refresh",
+            "capability": "edit_theme_options",
+            "sanitize": "sanitize_text_field"
+        },
+        "bungaku_theme_logo_max_width_desktop": {
+            "type": "theme_mod",
+            "default": 200,
+            "transport": "refresh",
+            "capability": "edit_theme_options",
+            "sanitize": "absint"
+        },
+        "bungaku_theme_logo_max_width_mobile": {
+            "type": "theme_mod",
+            "default": 120,
+            "transport": "refresh",
+            "capability": "edit_theme_options",
+            "sanitize": "absint"
+        },
+        "bungaku_theme_logo_max_width_tablet": {
+            "type": "theme_mod",
+            "default": 150,
+            "transport": "refresh",
+            "capability": "edit_theme_options",
+            "sanitize": "absint"
+        },
+        "bungaku_theme_logo_position_desktop": {
+            "type": "theme_mod",
+            "default": "left",
+            "transport": "refresh",
+            "capability": "edit_theme_options",
+            "sanitize": "bungaku_theme_sanitize_logo_position"
+        },
+        "bungaku_theme_logo_position_mobile": {
+            "type": "theme_mod",
+            "default": "left",
+            "transport": "refresh",
+            "capability": "edit_theme_options",
+            "sanitize": "bungaku_theme_sanitize_logo_position"
+        },
+        "bungaku_theme_logo_position_tablet": {
+            "type": "theme_mod",
+            "default": "left",
+            "transport": "refresh",
+            "capability": "edit_theme_options",
+            "sanitize": "bungaku_theme_sanitize_logo_position"
+        },
+        "bungaku_theme_menu_color": {
+            "type": "theme_mod",
+            "default": "#3a3a3a",
+            "transport": "refresh",
+            "capability": "edit_theme_options",
+            "sanitize": "sanitize_hex_color"
+        },
+        "bungaku_theme_menu_hover_color": {
+            "type": "theme_mod",
+            "default": "#0274be",
+            "transport": "refresh",
+            "capability": "edit_theme_options",
+            "sanitize": "sanitize_hex_color"
+        },
+        "bungaku_theme_menu_hover_underline_color": {
+            "type": "theme_mod",
+            "default": "#0274be",
+            "transport": "refresh",
+            "capability": "edit_theme_options",
+            "sanitize": "sanitize_hex_color"
+        },
+        "bungaku_theme_menu_padding": {
+            "type": "theme_mod",
+            "default": 10,
+            "transport": "refresh",
+            "capability": "edit_theme_options",
+            "sanitize": "absint"
+        },
+        "bungaku_theme_menu_size_desktop": {
+            "type": "theme_mod",
+            "default": "1",
+            "transport": "refresh",
+            "capability": "edit_theme_options",
+            "sanitize": "bungaku_theme_sanitize_float"
+        },
+        "bungaku_theme_menu_size_mobile": {
+            "type": "theme_mod",
+            "default": "0.9",
+            "transport": "refresh",
+            "capability": "edit_theme_options",
+            "sanitize": "bungaku_theme_sanitize_float"
+        },
+        "bungaku_theme_menu_size_tablet": {
+            "type": "theme_mod",
+            "default": "0.95",
+            "transport": "refresh",
+            "capability": "edit_theme_options",
+            "sanitize": "bungaku_theme_sanitize_float"
+        },
+        "bungaku_theme_menu_spacing": {
+            "type": "theme_mod",
+            "default": 20,
+            "transport": "refresh",
+            "capability": "edit_theme_options",
+            "sanitize": "absint"
+        },
+        "bungaku_theme_mobile_close_color": {
+            "type": "theme_mod",
+            "default": "#333333",
+            "transport": "refresh",
+            "capability": "edit_theme_options",
+            "sanitize": "sanitize_hex_color"
+        },
+        "bungaku_theme_mobile_close_hover_color": {
+            "type": "theme_mod",
+            "default": "#0274be",
+            "transport": "refresh",
+            "capability": "edit_theme_options",
+            "sanitize": "sanitize_hex_color"
+        },
+        "bungaku_theme_mobile_dropdown_bg": {
+            "type": "theme_mod",
+            "default": "#f9f9f9",
+            "transport": "refresh",
+            "capability": "edit_theme_options",
+            "sanitize": "sanitize_hex_color"
+        },
+        "bungaku_theme_mobile_dropdown_border": {
+            "type": "theme_mod",
+            "default": "#e0e0e0",
+            "transport": "refresh",
+            "capability": "edit_theme_options",
+            "sanitize": "sanitize_hex_color"
+        },
+        "bungaku_theme_mobile_dropdown_hover_bg": {
+            "type": "theme_mod",
+            "default": "#f8f9fa",
+            "transport": "refresh",
+            "capability": "edit_theme_options",
+            "sanitize": "sanitize_hex_color"
+        },
+        "bungaku_theme_mobile_dropdown_hover_text": {
+            "type": "theme_mod",
+            "default": "#0274be",
+            "transport": "refresh",
+            "capability": "edit_theme_options",
+            "sanitize": "sanitize_hex_color"
+        },
+        "bungaku_theme_mobile_dropdown_text": {
+            "type": "theme_mod",
+            "default": "#3a3a3a",
+            "transport": "refresh",
+            "capability": "edit_theme_options",
+            "sanitize": "sanitize_hex_color"
+        },
+        "bungaku_theme_mobile_menu_bg": {
+            "type": "theme_mod",
+            "default": "#ffffff",
+            "transport": "refresh",
+            "capability": "edit_theme_options",
+            "sanitize": "sanitize_hex_color"
+        },
+        "bungaku_theme_mobile_menu_hover_bg": {
+            "type": "theme_mod",
+            "default": "#f8f9fa",
+            "transport": "refresh",
+            "capability": "edit_theme_options",
+            "sanitize": "sanitize_hex_color"
+        },
+        "bungaku_theme_mobile_menu_hover_text": {
+            "type": "theme_mod",
+            "default": "#0274be",
+            "transport": "refresh",
+            "capability": "edit_theme_options",
+            "sanitize": "sanitize_hex_color"
+        },
+        "bungaku_theme_mobile_menu_text": {
+            "type": "theme_mod",
+            "default": "#3a3a3a",
+            "transport": "refresh",
+            "capability": "edit_theme_options",
+            "sanitize": "sanitize_hex_color"
+        },
+        "bungaku_theme_phone_1": {
+            "type": "theme_mod",
+            "default": "+1 (234) 567-8901",
+            "transport": "postMessage",
+            "capability": "edit_theme_options",
+            "sanitize": "sanitize_text_field"
+        },
+        "bungaku_theme_phone_2": {
+            "type": "theme_mod",
+            "default": "+1 (234) 567-8902",
+            "transport": "postMessage",
+            "capability": "edit_theme_options",
+            "sanitize": "sanitize_text_field"
+        },
+        "bungaku_theme_read_more_text": {
+            "type": "theme_mod",
+            "default": "Read More",
+            "transport": "refresh",
+            "capability": "edit_theme_options",
+            "sanitize": "sanitize_text_field"
+        },
+        "bungaku_theme_related_count": {
+            "type": "theme_mod",
+            "default": 3,
+            "transport": "refresh",
+            "capability": "edit_theme_options",
+            "sanitize": "absint"
+        },
+        "bungaku_theme_show_author_bio": {
+            "type": "theme_mod",
+            "default": true,
+            "transport": "refresh",
+            "capability": "edit_theme_options",
+            "sanitize": "wp_validate_boolean"
+        },
+        "bungaku_theme_show_contact_email": {
+            "type": "theme_mod",
+            "default": true,
+            "transport": "postMessage",
+            "capability": "edit_theme_options",
+            "sanitize": "wp_validate_boolean"
+        },
+        "bungaku_theme_show_contact_phones": {
+            "type": "theme_mod",
+            "default": true,
+            "transport": "postMessage",
+            "capability": "edit_theme_options",
+            "sanitize": "wp_validate_boolean"
+        },
+        "bungaku_theme_show_contact_social": {
+            "type": "theme_mod",
+            "default": true,
+            "transport": "postMessage",
+            "capability": "edit_theme_options",
+            "sanitize": "wp_validate_boolean"
+        },
+        "bungaku_theme_show_description": {
+            "type": "theme_mod",
+            "default": true,
+            "transport": "refresh",
+            "capability": "edit_theme_options",
+            "sanitize": "wp_validate_boolean"
+        },
+        "bungaku_theme_show_featured_image": {
+            "type": "theme_mod",
+            "default": "show",
+            "transport": "refresh",
+            "capability": "edit_theme_options",
+            "sanitize": "bungaku_theme_sanitize_show_hide"
+        },
+        "bungaku_theme_show_footer_menu": {
+            "type": "theme_mod",
+            "default": true,
+            "transport": "refresh",
+            "capability": "edit_theme_options",
+            "sanitize": "wp_validate_boolean"
+        },
+        "bungaku_theme_show_login_button": {
+            "type": "theme_mod",
+            "default": false,
+            "transport": "refresh",
+            "capability": "edit_theme_options",
+            "sanitize": "wp_validate_boolean"
+        },
+        "bungaku_theme_show_logo": {
+            "type": "theme_mod",
+            "default": true,
+            "transport": "refresh",
+            "capability": "edit_theme_options",
+            "sanitize": "wp_validate_boolean"
+        },
+        "bungaku_theme_show_menu_descriptions": {
+            "type": "theme_mod",
+            "default": false,
+            "transport": "refresh",
+            "capability": "edit_theme_options",
+            "sanitize": "wp_validate_boolean"
+        },
+        "bungaku_theme_show_post_author": {
+            "type": "theme_mod",
+            "default": true,
+            "transport": "refresh",
+            "capability": "edit_theme_options",
+            "sanitize": "wp_validate_boolean"
+        },
+        "bungaku_theme_show_post_categories": {
+            "type": "theme_mod",
+            "default": false,
+            "transport": "refresh",
+            "capability": "edit_theme_options",
+            "sanitize": "wp_validate_boolean"
+        },
+        "bungaku_theme_show_post_comments": {
+            "type": "theme_mod",
+            "default": true,
+            "transport": "refresh",
+            "capability": "edit_theme_options",
+            "sanitize": "wp_validate_boolean"
+        },
+        "bungaku_theme_show_post_date": {
+            "type": "theme_mod",
+            "default": true,
+            "transport": "refresh",
+            "capability": "edit_theme_options",
+            "sanitize": "wp_validate_boolean"
+        },
+        "bungaku_theme_show_post_meta": {
+            "type": "theme_mod",
+            "default": "show",
+            "transport": "refresh",
+            "capability": "edit_theme_options",
+            "sanitize": "bungaku_theme_sanitize_post_meta"
+        },
+        "bungaku_theme_show_read_more": {
+            "type": "theme_mod",
+            "default": true,
+            "transport": "refresh",
+            "capability": "edit_theme_options",
+            "sanitize": "wp_validate_boolean"
+        },
+        "bungaku_theme_show_related_posts": {
+            "type": "theme_mod",
+            "default": true,
+            "transport": "refresh",
+            "capability": "edit_theme_options",
+            "sanitize": "wp_validate_boolean"
+        },
+        "bungaku_theme_sidebar_bg": {
+            "type": "theme_mod",
+            "default": "#ffffff",
+            "transport": "refresh",
+            "capability": "edit_theme_options",
+            "sanitize": "sanitize_hex_color"
+        },
+        "bungaku_theme_sidebar_position": {
+            "type": "theme_mod",
+            "default": "right",
+            "transport": "refresh",
+            "capability": "edit_theme_options",
+            "sanitize": "bungaku_theme_sanitize_sidebar_position"
+        },
+        "bungaku_theme_sidebar_width": {
+            "type": "theme_mod",
+            "default": 22,
+            "transport": "refresh",
+            "capability": "edit_theme_options",
+            "sanitize": "absint"
+        },
+        "bungaku_theme_site_description_color": {
+            "type": "theme_mod",
+            "default": "#666666",
+            "transport": "refresh",
+            "capability": "edit_theme_options",
+            "sanitize": "sanitize_hex_color"
+        },
+        "bungaku_theme_site_title_color": {
+            "type": "theme_mod",
+            "default": "#333333",
+            "transport": "refresh",
+            "capability": "edit_theme_options",
+            "sanitize": "sanitize_hex_color"
+        },
+        "bungaku_theme_site_title_size_desktop": {
+            "type": "theme_mod",
+            "default": "1.8",
+            "transport": "refresh",
+            "capability": "edit_theme_options",
+            "sanitize": "bungaku_theme_sanitize_float"
+        },
+        "bungaku_theme_site_title_size_mobile": {
+            "type": "theme_mod",
+            "default": "1.3",
+            "transport": "refresh",
+            "capability": "edit_theme_options",
+            "sanitize": "bungaku_theme_sanitize_float"
+        },
+        "bungaku_theme_site_title_size_tablet": {
+            "type": "theme_mod",
+            "default": "1.5",
+            "transport": "refresh",
+            "capability": "edit_theme_options",
+            "sanitize": "bungaku_theme_sanitize_float"
+        },
+        "bungaku_theme_social_icon_bg": {
+            "type": "theme_mod",
+            "default": "#e0e0e0",
+            "transport": "refresh",
+            "capability": "edit_theme_options",
+            "sanitize": "sanitize_hex_color"
+        },
+        "bungaku_theme_social_icon_color": {
+            "type": "theme_mod",
+            "default": "#333333",
+            "transport": "refresh",
+            "capability": "edit_theme_options",
+            "sanitize": "sanitize_hex_color"
+        },
+        "bungaku_theme_social_icon_font_size": {
+            "type": "theme_mod",
+            "default": 18,
+            "transport": "refresh",
+            "capability": "edit_theme_options",
+            "sanitize": "absint"
+        },
+        "bungaku_theme_social_icon_hover_bg": {
+            "type": "theme_mod",
+            "default": "#cccccc",
+            "transport": "refresh",
+            "capability": "edit_theme_options",
+            "sanitize": "sanitize_hex_color"
+        },
+        "bungaku_theme_social_icon_hover_color": {
+            "type": "theme_mod",
+            "default": "#ffffff",
+            "transport": "refresh",
+            "capability": "edit_theme_options",
+            "sanitize": "sanitize_hex_color"
+        },
+        "bungaku_theme_social_icon_size": {
+            "type": "theme_mod",
+            "default": 36,
+            "transport": "refresh",
+            "capability": "edit_theme_options",
+            "sanitize": "absint"
+        },
+        "bungaku_theme_sticky_header": {
+            "type": "theme_mod",
+            "default": false,
+            "transport": "refresh",
+            "capability": "edit_theme_options",
+            "sanitize": "wp_validate_boolean"
+        },
+        "bungaku_theme_submenu_size_desktop": {
+            "type": "theme_mod",
+            "default": "0.95",
+            "transport": "refresh",
+            "capability": "edit_theme_options",
+            "sanitize": "bungaku_theme_sanitize_float"
+        },
+        "bungaku_theme_submenu_size_mobile": {
+            "type": "theme_mod",
+            "default": "0.85",
+            "transport": "refresh",
+            "capability": "edit_theme_options",
+            "sanitize": "bungaku_theme_sanitize_float"
+        },
+        "bungaku_theme_submenu_size_tablet": {
+            "type": "theme_mod",
+            "default": "0.9",
+            "transport": "refresh",
+            "capability": "edit_theme_options",
+            "sanitize": "bungaku_theme_sanitize_float"
+        },
+        "bungaku_theme_tablet_dropdown_bg": {
+            "type": "theme_mod",
+            "default": "#f9f9f9",
+            "transport": "refresh",
+            "capability": "edit_theme_options",
+            "sanitize": "sanitize_hex_color"
+        },
+        "bungaku_theme_tablet_dropdown_border": {
+            "type": "theme_mod",
+            "default": "#e0e0e0",
+            "transport": "refresh",
+            "capability": "edit_theme_options",
+            "sanitize": "sanitize_hex_color"
+        },
+        "bungaku_theme_tablet_dropdown_hover_bg": {
+            "type": "theme_mod",
+            "default": "#f8f9fa",
+            "transport": "refresh",
+            "capability": "edit_theme_options",
+            "sanitize": "sanitize_hex_color"
+        },
+        "bungaku_theme_tablet_dropdown_hover_text": {
+            "type": "theme_mod",
+            "default": "#0274be",
+            "transport": "refresh",
+            "capability": "edit_theme_options",
+            "sanitize": "sanitize_hex_color"
+        },
+        "bungaku_theme_tablet_dropdown_text": {
+            "type": "theme_mod",
+            "default": "#3a3a3a",
+            "transport": "refresh",
+            "capability": "edit_theme_options",
+            "sanitize": "sanitize_hex_color"
+        },
+        "bungaku_theme_tablet_menu_bg": {
+            "type": "theme_mod",
+            "default": "#ffffff",
+            "transport": "refresh",
+            "capability": "edit_theme_options",
+            "sanitize": "sanitize_hex_color"
+        },
+        "bungaku_theme_tablet_menu_hover_bg": {
+            "type": "theme_mod",
+            "default": "#f8f9fa",
+            "transport": "refresh",
+            "capability": "edit_theme_options",
+            "sanitize": "sanitize_hex_color"
+        },
+        "bungaku_theme_tablet_menu_hover_text": {
+            "type": "theme_mod",
+            "default": "#0274be",
+            "transport": "refresh",
+            "capability": "edit_theme_options",
+            "sanitize": "sanitize_hex_color"
+        },
+        "bungaku_theme_tablet_menu_text": {
+            "type": "theme_mod",
+            "default": "#3a3a3a",
+            "transport": "refresh",
+            "capability": "edit_theme_options",
+            "sanitize": "sanitize_hex_color"
+        },
+        "bungaku_theme_tagline_align": {
+            "type": "theme_mod",
+            "default": "center",
+            "transport": "postMessage",
+            "capability": "edit_theme_options",
+            "sanitize": "bungaku_theme_sanitize_text_align"
+        },
+        "bungaku_theme_tagline_color": {
+            "type": "theme_mod",
+            "default": "#666666",
+            "transport": "refresh",
+            "capability": "edit_theme_options",
+            "sanitize": "sanitize_hex_color"
+        },
+        "bungaku_theme_tagline_size_desktop": {
+            "type": "theme_mod",
+            "default": "1",
+            "transport": "refresh",
+            "capability": "edit_theme_options",
+            "sanitize": "bungaku_theme_sanitize_float"
+        },
+        "bungaku_theme_tagline_size_mobile": {
+            "type": "theme_mod",
+            "default": "0.85",
+            "transport": "refresh",
+            "capability": "edit_theme_options",
+            "sanitize": "bungaku_theme_sanitize_float"
+        },
+        "bungaku_theme_tagline_size_tablet": {
+            "type": "theme_mod",
+            "default": "0.9",
+            "transport": "refresh",
+            "capability": "edit_theme_options",
+            "sanitize": "bungaku_theme_sanitize_float"
+        },
+        "bungaku_theme_text_color": {
+            "type": "theme_mod",
+            "default": "#333333",
+            "transport": "refresh",
+            "capability": "edit_theme_options",
+            "sanitize": "sanitize_hex_color"
+        },
+        "bungaku_theme_title_accent_color": {
+            "type": "theme_mod",
+            "default": "#cc4a0a",
+            "transport": "postMessage",
+            "capability": "edit_theme_options",
+            "sanitize": "sanitize_hex_color"
+        },
+        "bungaku_theme_title_accent_text": {
+            "type": "theme_mod",
+            "default": "",
+            "transport": "refresh",
+            "capability": "edit_theme_options",
+            "sanitize": "bungaku_theme_sanitize_title_accent_text"
+        },
+        "bungaku_theme_title_align_desktop": {
+            "type": "theme_mod",
+            "default": "left",
+            "transport": "refresh",
+            "capability": "edit_theme_options",
+            "sanitize": "bungaku_theme_sanitize_text_align"
+        },
+        "bungaku_theme_title_align_mobile": {
+            "type": "theme_mod",
+            "default": "left",
+            "transport": "refresh",
+            "capability": "edit_theme_options",
+            "sanitize": "bungaku_theme_sanitize_text_align"
+        },
+        "bungaku_theme_title_align_tablet": {
+            "type": "theme_mod",
+            "default": "left",
+            "transport": "refresh",
+            "capability": "edit_theme_options",
+            "sanitize": "bungaku_theme_sanitize_text_align"
+        },
+        "bungaku_theme_twitter_url": {
+            "type": "theme_mod",
+            "default": "",
+            "transport": "postMessage",
+            "capability": "edit_theme_options",
+            "sanitize": "esc_url_raw"
+        },
+        "bungaku_theme_youtube_url": {
+            "type": "theme_mod",
+            "default": "",
+            "transport": "postMessage",
+            "capability": "edit_theme_options",
+            "sanitize": "esc_url_raw"
+        }
+    },
+    "controls": {
+        "bungaku_theme_blog_layout": {
+            "type": "radio",
+            "section": "bungaku_theme_blog_layout_section"
+        },
+        "bungaku_theme_body_font_family": {
+            "type": "select",
+            "section": "bungaku_theme_font_family_section"
+        },
+        "bungaku_theme_body_font_size_desktop": {
+            "type": "number",
+            "section": "bungaku_theme_font_size_desktop_section"
+        },
+        "bungaku_theme_body_font_size_mobile": {
+            "type": "number",
+            "section": "bungaku_theme_font_size_mobile_section"
+        },
+        "bungaku_theme_body_font_size_tablet": {
+            "type": "number",
+            "section": "bungaku_theme_font_size_tablet_section"
+        },
+        "bungaku_theme_body_line_height": {
+            "type": "number",
+            "section": "bungaku_theme_font_size_mobile_section"
+        },
+        "bungaku_theme_contact_email_color": {
+            "type": "color",
+            "section": "bungaku_theme_contact_social_section"
+        },
+        "bungaku_theme_contact_email_hover_color": {
+            "type": "color",
+            "section": "bungaku_theme_contact_social_section"
+        },
+        "bungaku_theme_contact_phone_color": {
+            "type": "color",
+            "section": "bungaku_theme_contact_social_section"
+        },
+        "bungaku_theme_contact_phone_hover_color": {
+            "type": "color",
+            "section": "bungaku_theme_contact_social_section"
+        },
+        "bungaku_theme_contact_text_size_mobile": {
+            "type": "number",
+            "section": "bungaku_theme_contact_social_section"
+        },
+        "bungaku_theme_contact_text_size_tablet": {
+            "type": "number",
+            "section": "bungaku_theme_contact_social_section"
+        },
+        "bungaku_theme_container_width": {
+            "type": "number",
+            "section": "bungaku_theme_container_section"
+        },
+        "bungaku_theme_content_display": {
+            "type": "radio",
+            "section": "bungaku_theme_post_elements_section"
+        },
+        "bungaku_theme_content_width": {
+            "type": "number",
+            "section": "bungaku_theme_sidebar_section"
+        },
+        "bungaku_theme_copyright_color": {
+            "type": "color",
+            "section": "bungaku_theme_footer_section"
+        },
+        "bungaku_theme_copyright_text": {
+            "type": "textarea",
+            "section": "bungaku_theme_footer_section"
+        },
+        "bungaku_theme_custom_description": {
+            "type": "textarea",
+            "section": "bungaku_theme_header_section"
+        },
+        "bungaku_theme_description_size_desktop": {
+            "type": "number",
+            "section": "bungaku_theme_font_size_desktop_section"
+        },
+        "bungaku_theme_description_size_mobile": {
+            "type": "number",
+            "section": "bungaku_theme_font_size_mobile_section"
+        },
+        "bungaku_theme_description_size_tablet": {
+            "type": "number",
+            "section": "bungaku_theme_font_size_tablet_section"
+        },
+        "bungaku_theme_dropdown_bg": {
+            "type": "color",
+            "section": "bungaku_theme_colors_dropdown_section"
+        },
+        "bungaku_theme_dropdown_hover_bg": {
+            "type": "color",
+            "section": "bungaku_theme_colors_dropdown_section"
+        },
+        "bungaku_theme_dropdown_hover_text": {
+            "type": "color",
+            "section": "bungaku_theme_colors_dropdown_section"
+        },
+        "bungaku_theme_dropdown_text": {
+            "type": "color",
+            "section": "bungaku_theme_colors_dropdown_section"
+        },
+        "bungaku_theme_email": {
+            "type": "email",
+            "section": "bungaku_theme_contact_social_section"
+        },
+        "bungaku_theme_excerpt_length": {
+            "type": "number",
+            "section": "bungaku_theme_post_elements_section"
+        },
+        "bungaku_theme_facebook_url": {
+            "type": "url",
+            "section": "bungaku_theme_contact_social_section"
+        },
+        "bungaku_theme_featured_image_size": {
+            "type": "select",
+            "section": "bungaku_theme_post_elements_section"
+        },
+        "bungaku_theme_footer_bg": {
+            "type": "color",
+            "section": "bungaku_theme_footer_section"
+        },
+        "bungaku_theme_footer_direction": {
+            "type": "radio",
+            "section": "bungaku_theme_footer_section"
+        },
+        "bungaku_theme_footer_layout": {
+            "type": "select",
+            "section": "bungaku_theme_footer_section"
+        },
+        "bungaku_theme_footer_padding": {
+            "type": "number",
+            "section": "bungaku_theme_footer_section"
+        },
+        "bungaku_theme_grid_columns": {
+            "type": "select",
+            "section": "bungaku_theme_blog_layout_section"
+        },
+        "bungaku_theme_hamburger_bg": {
+            "type": "text",
+            "section": "bungaku_theme_mobile_menu_colors_section"
+        },
+        "bungaku_theme_hamburger_color": {
+            "type": "color",
+            "section": "bungaku_theme_mobile_menu_colors_section"
+        },
+        "bungaku_theme_hamburger_font_size": {
+            "type": "number",
+            "section": "bungaku_theme_submenu_section"
+        },
+        "bungaku_theme_hamburger_height": {
+            "type": "number",
+            "section": "bungaku_theme_submenu_section"
+        },
+        "bungaku_theme_hamburger_hover_bg": {
+            "type": "text",
+            "section": "bungaku_theme_mobile_menu_colors_section"
+        },
+        "bungaku_theme_hamburger_hover_color": {
+            "type": "color",
+            "section": "bungaku_theme_mobile_menu_colors_section"
+        },
+        "bungaku_theme_hamburger_width": {
+            "type": "number",
+            "section": "bungaku_theme_submenu_section"
+        },
+        "bungaku_theme_header_bg": {
+            "type": "color",
+            "section": "bungaku_theme_colors_general_section"
+        },
+        "bungaku_theme_header_padding": {
+            "type": "number",
+            "section": "bungaku_theme_header_section"
+        },
+        "bungaku_theme_heading_color": {
+            "type": "color",
+            "section": "bungaku_theme_colors_general_section"
+        },
+        "bungaku_theme_heading_font_family": {
+            "type": "select",
+            "section": "bungaku_theme_font_family_section"
+        },
+        "bungaku_theme_heading_size_desktop": {
+            "type": "number",
+            "section": "bungaku_theme_font_size_desktop_section"
+        },
+        "bungaku_theme_heading_size_mobile": {
+            "type": "number",
+            "section": "bungaku_theme_font_size_mobile_section"
+        },
+        "bungaku_theme_heading_size_tablet": {
+            "type": "number",
+            "section": "bungaku_theme_font_size_tablet_section"
+        },
+        "bungaku_theme_hide_contact_mobile": {
+            "type": "checkbox",
+            "section": "bungaku_theme_contact_social_section"
+        },
+        "bungaku_theme_hide_contact_tablet": {
+            "type": "checkbox",
+            "section": "bungaku_theme_contact_social_section"
+        },
+        "bungaku_theme_hide_description_mobile": {
+            "type": "checkbox",
+            "section": "bungaku_theme_header_section"
+        },
+        "bungaku_theme_hide_description_tablet": {
+            "type": "checkbox",
+            "section": "bungaku_theme_header_section"
+        },
+        "bungaku_theme_instagram_url": {
+            "type": "url",
+            "section": "bungaku_theme_contact_social_section"
+        },
+        "bungaku_theme_link_color": {
+            "type": "color",
+            "section": "bungaku_theme_colors_general_section"
+        },
+        "bungaku_theme_link_hover_color": {
+            "type": "color",
+            "section": "bungaku_theme_colors_general_section"
+        },
+        "bungaku_theme_linkedin_url": {
+            "type": "url",
+            "section": "bungaku_theme_contact_social_section"
+        },
+        "bungaku_theme_login_button_text": {
+            "type": "text",
+            "section": "bungaku_theme_contact_social_section"
+        },
+        "bungaku_theme_logo_max_width_desktop": {
+            "type": "number",
+            "section": "bungaku_theme_header_section"
+        },
+        "bungaku_theme_logo_max_width_mobile": {
+            "type": "number",
+            "section": "bungaku_theme_header_section"
+        },
+        "bungaku_theme_logo_max_width_tablet": {
+            "type": "number",
+            "section": "bungaku_theme_header_section"
+        },
+        "bungaku_theme_logo_position_desktop": {
+            "type": "select",
+            "section": "bungaku_theme_header_section"
+        },
+        "bungaku_theme_logo_position_mobile": {
+            "type": "select",
+            "section": "bungaku_theme_header_section"
+        },
+        "bungaku_theme_logo_position_tablet": {
+            "type": "select",
+            "section": "bungaku_theme_header_section"
+        },
+        "bungaku_theme_menu_color": {
+            "type": "color",
+            "section": "bungaku_theme_colors_general_section"
+        },
+        "bungaku_theme_menu_hover_color": {
+            "type": "color",
+            "section": "bungaku_theme_menu_section"
+        },
+        "bungaku_theme_menu_hover_underline_color": {
+            "type": "color",
+            "section": "bungaku_theme_menu_section"
+        },
+        "bungaku_theme_menu_padding": {
+            "type": "number",
+            "section": "bungaku_theme_menu_section"
+        },
+        "bungaku_theme_menu_size_desktop": {
+            "type": "number",
+            "section": "bungaku_theme_font_size_desktop_section"
+        },
+        "bungaku_theme_menu_size_mobile": {
+            "type": "number",
+            "section": "bungaku_theme_font_size_mobile_section"
+        },
+        "bungaku_theme_menu_size_tablet": {
+            "type": "number",
+            "section": "bungaku_theme_font_size_tablet_section"
+        },
+        "bungaku_theme_menu_spacing": {
+            "type": "number",
+            "section": "bungaku_theme_menu_section"
+        },
+        "bungaku_theme_mobile_close_color": {
+            "type": "color",
+            "section": "bungaku_theme_mobile_menu_colors_section"
+        },
+        "bungaku_theme_mobile_close_hover_color": {
+            "type": "color",
+            "section": "bungaku_theme_mobile_menu_colors_section"
+        },
+        "bungaku_theme_mobile_dropdown_bg": {
+            "type": "color",
+            "section": "bungaku_theme_mobile_menu_colors_section"
+        },
+        "bungaku_theme_mobile_dropdown_border": {
+            "type": "color",
+            "section": "bungaku_theme_mobile_menu_colors_section"
+        },
+        "bungaku_theme_mobile_dropdown_hover_bg": {
+            "type": "color",
+            "section": "bungaku_theme_mobile_menu_colors_section"
+        },
+        "bungaku_theme_mobile_dropdown_hover_text": {
+            "type": "color",
+            "section": "bungaku_theme_mobile_menu_colors_section"
+        },
+        "bungaku_theme_mobile_dropdown_text": {
+            "type": "color",
+            "section": "bungaku_theme_mobile_menu_colors_section"
+        },
+        "bungaku_theme_mobile_menu_bg": {
+            "type": "color",
+            "section": "bungaku_theme_mobile_menu_colors_section"
+        },
+        "bungaku_theme_mobile_menu_hover_bg": {
+            "type": "color",
+            "section": "bungaku_theme_mobile_menu_colors_section"
+        },
+        "bungaku_theme_mobile_menu_hover_text": {
+            "type": "color",
+            "section": "bungaku_theme_mobile_menu_colors_section"
+        },
+        "bungaku_theme_mobile_menu_text": {
+            "type": "color",
+            "section": "bungaku_theme_mobile_menu_colors_section"
+        },
+        "bungaku_theme_phone_1": {
+            "type": "text",
+            "section": "bungaku_theme_contact_social_section"
+        },
+        "bungaku_theme_phone_2": {
+            "type": "text",
+            "section": "bungaku_theme_contact_social_section"
+        },
+        "bungaku_theme_read_more_text": {
+            "type": "text",
+            "section": "bungaku_theme_post_elements_section"
+        },
+        "bungaku_theme_related_count": {
+            "type": "number",
+            "section": "bungaku_theme_single_post_section"
+        },
+        "bungaku_theme_show_author_bio": {
+            "type": "checkbox",
+            "section": "bungaku_theme_single_post_section"
+        },
+        "bungaku_theme_show_contact_email": {
+            "type": "checkbox",
+            "section": "bungaku_theme_contact_social_section"
+        },
+        "bungaku_theme_show_contact_phones": {
+            "type": "checkbox",
+            "section": "bungaku_theme_contact_social_section"
+        },
+        "bungaku_theme_show_contact_social": {
+            "type": "checkbox",
+            "section": "bungaku_theme_contact_social_section"
+        },
+        "bungaku_theme_show_description": {
+            "type": "checkbox",
+            "section": "bungaku_theme_header_section"
+        },
+        "bungaku_theme_show_featured_image": {
+            "type": "radio",
+            "section": "bungaku_theme_post_elements_section"
+        },
+        "bungaku_theme_show_footer_menu": {
+            "type": "checkbox",
+            "section": "bungaku_theme_footer_section"
+        },
+        "bungaku_theme_show_login_button": {
+            "type": "checkbox",
+            "section": "bungaku_theme_contact_social_section"
+        },
+        "bungaku_theme_show_logo": {
+            "type": "checkbox",
+            "section": "title_tagline"
+        },
+        "bungaku_theme_show_menu_descriptions": {
+            "type": "checkbox",
+            "section": "bungaku_theme_menu_section"
+        },
+        "bungaku_theme_show_post_author": {
+            "type": "checkbox",
+            "section": "bungaku_theme_post_elements_section"
+        },
+        "bungaku_theme_show_post_categories": {
+            "type": "checkbox",
+            "section": "bungaku_theme_post_elements_section"
+        },
+        "bungaku_theme_show_post_comments": {
+            "type": "checkbox",
+            "section": "bungaku_theme_post_elements_section"
+        },
+        "bungaku_theme_show_post_date": {
+            "type": "checkbox",
+            "section": "bungaku_theme_post_elements_section"
+        },
+        "bungaku_theme_show_post_meta": {
+            "type": "radio",
+            "section": "bungaku_theme_post_elements_section"
+        },
+        "bungaku_theme_show_read_more": {
+            "type": "checkbox",
+            "section": "bungaku_theme_post_elements_section"
+        },
+        "bungaku_theme_show_related_posts": {
+            "type": "checkbox",
+            "section": "bungaku_theme_single_post_section"
+        },
+        "bungaku_theme_sidebar_bg": {
+            "type": "color",
+            "section": "bungaku_theme_sidebar_section"
+        },
+        "bungaku_theme_sidebar_position": {
+            "type": "radio",
+            "section": "bungaku_theme_sidebar_section"
+        },
+        "bungaku_theme_sidebar_width": {
+            "type": "number",
+            "section": "bungaku_theme_sidebar_section"
+        },
+        "bungaku_theme_site_description_color": {
+            "type": "color",
+            "section": "bungaku_theme_colors_general_section"
+        },
+        "bungaku_theme_site_title_color": {
+            "type": "color",
+            "section": "bungaku_theme_colors_general_section"
+        },
+        "bungaku_theme_site_title_size_desktop": {
+            "type": "number",
+            "section": "bungaku_theme_font_size_desktop_section"
+        },
+        "bungaku_theme_site_title_size_mobile": {
+            "type": "number",
+            "section": "bungaku_theme_font_size_mobile_section"
+        },
+        "bungaku_theme_site_title_size_tablet": {
+            "type": "number",
+            "section": "bungaku_theme_font_size_tablet_section"
+        },
+        "bungaku_theme_social_icon_bg": {
+            "type": "color",
+            "section": "bungaku_theme_contact_social_section"
+        },
+        "bungaku_theme_social_icon_color": {
+            "type": "color",
+            "section": "bungaku_theme_contact_social_section"
+        },
+        "bungaku_theme_social_icon_font_size": {
+            "type": "number",
+            "section": "bungaku_theme_contact_social_section"
+        },
+        "bungaku_theme_social_icon_hover_bg": {
+            "type": "color",
+            "section": "bungaku_theme_contact_social_section"
+        },
+        "bungaku_theme_social_icon_hover_color": {
+            "type": "color",
+            "section": "bungaku_theme_contact_social_section"
+        },
+        "bungaku_theme_social_icon_size": {
+            "type": "number",
+            "section": "bungaku_theme_contact_social_section"
+        },
+        "bungaku_theme_sticky_header": {
+            "type": "checkbox",
+            "section": "bungaku_theme_header_section"
+        },
+        "bungaku_theme_submenu_size_desktop": {
+            "type": "number",
+            "section": "bungaku_theme_submenu_section"
+        },
+        "bungaku_theme_submenu_size_mobile": {
+            "type": "number",
+            "section": "bungaku_theme_submenu_section"
+        },
+        "bungaku_theme_submenu_size_tablet": {
+            "type": "number",
+            "section": "bungaku_theme_submenu_section"
+        },
+        "bungaku_theme_tablet_dropdown_bg": {
+            "type": "color",
+            "section": "bungaku_theme_tablet_menu_colors_section"
+        },
+        "bungaku_theme_tablet_dropdown_border": {
+            "type": "color",
+            "section": "bungaku_theme_tablet_menu_colors_section"
+        },
+        "bungaku_theme_tablet_dropdown_hover_bg": {
+            "type": "color",
+            "section": "bungaku_theme_tablet_menu_colors_section"
+        },
+        "bungaku_theme_tablet_dropdown_hover_text": {
+            "type": "color",
+            "section": "bungaku_theme_tablet_menu_colors_section"
+        },
+        "bungaku_theme_tablet_dropdown_text": {
+            "type": "color",
+            "section": "bungaku_theme_tablet_menu_colors_section"
+        },
+        "bungaku_theme_tablet_menu_bg": {
+            "type": "color",
+            "section": "bungaku_theme_tablet_menu_colors_section"
+        },
+        "bungaku_theme_tablet_menu_hover_bg": {
+            "type": "color",
+            "section": "bungaku_theme_tablet_menu_colors_section"
+        },
+        "bungaku_theme_tablet_menu_hover_text": {
+            "type": "color",
+            "section": "bungaku_theme_tablet_menu_colors_section"
+        },
+        "bungaku_theme_tablet_menu_text": {
+            "type": "color",
+            "section": "bungaku_theme_tablet_menu_colors_section"
+        },
+        "bungaku_theme_tagline_align": {
+            "type": "select",
+            "section": "bungaku_theme_header_section"
+        },
+        "bungaku_theme_tagline_color": {
+            "type": "color",
+            "section": "bungaku_theme_colors_general_section"
+        },
+        "bungaku_theme_tagline_size_desktop": {
+            "type": "number",
+            "section": "bungaku_theme_font_size_desktop_section"
+        },
+        "bungaku_theme_tagline_size_mobile": {
+            "type": "number",
+            "section": "bungaku_theme_font_size_mobile_section"
+        },
+        "bungaku_theme_tagline_size_tablet": {
+            "type": "number",
+            "section": "bungaku_theme_font_size_tablet_section"
+        },
+        "bungaku_theme_text_color": {
+            "type": "color",
+            "section": "bungaku_theme_colors_general_section"
+        },
+        "bungaku_theme_title_accent_color": {
+            "type": "color",
+            "section": "bungaku_theme_colors_general_section"
+        },
+        "bungaku_theme_title_accent_text": {
+            "type": "text",
+            "section": "bungaku_theme_colors_general_section"
+        },
+        "bungaku_theme_title_align_desktop": {
+            "type": "select",
+            "section": "bungaku_theme_header_section"
+        },
+        "bungaku_theme_title_align_mobile": {
+            "type": "select",
+            "section": "bungaku_theme_header_section"
+        },
+        "bungaku_theme_title_align_tablet": {
+            "type": "select",
+            "section": "bungaku_theme_header_section"
+        },
+        "bungaku_theme_twitter_url": {
+            "type": "url",
+            "section": "bungaku_theme_contact_social_section"
+        },
+        "bungaku_theme_youtube_url": {
+            "type": "url",
+            "section": "bungaku_theme_contact_social_section"
+        }
+    },
+    "sections": {
+        "bungaku_theme_blog_layout_section": {
+            "panel": "bungaku_theme_blog_panel"
+        },
+        "bungaku_theme_colors_dropdown_section": {
+            "panel": "bungaku_theme_colors_panel"
+        },
+        "bungaku_theme_colors_general_section": {
+            "panel": "bungaku_theme_colors_panel"
+        },
+        "bungaku_theme_contact_social_section": {
+            "panel": ""
+        },
+        "bungaku_theme_container_section": {
+            "panel": "bungaku_theme_layout_panel"
+        },
+        "bungaku_theme_font_family_section": {
+            "panel": "bungaku_theme_typography_panel"
+        },
+        "bungaku_theme_font_size_desktop_section": {
+            "panel": "bungaku_theme_typography_panel"
+        },
+        "bungaku_theme_font_size_mobile_section": {
+            "panel": "bungaku_theme_typography_panel"
+        },
+        "bungaku_theme_font_size_tablet_section": {
+            "panel": "bungaku_theme_typography_panel"
+        },
+        "bungaku_theme_footer_section": {
+            "panel": "bungaku_theme_layout_panel"
+        },
+        "bungaku_theme_header_section": {
+            "panel": "bungaku_theme_layout_panel"
+        },
+        "bungaku_theme_menu_section": {
+            "panel": "bungaku_theme_layout_panel"
+        },
+        "bungaku_theme_mobile_menu_colors_section": {
+            "panel": "bungaku_theme_colors_panel"
+        },
+        "bungaku_theme_post_elements_section": {
+            "panel": "bungaku_theme_blog_panel"
+        },
+        "bungaku_theme_sidebar_section": {
+            "panel": "bungaku_theme_layout_panel"
+        },
+        "bungaku_theme_single_post_section": {
+            "panel": "bungaku_theme_blog_panel"
+        },
+        "bungaku_theme_submenu_section": {
+            "panel": "bungaku_theme_typography_panel"
+        },
+        "bungaku_theme_tablet_menu_colors_section": {
+            "panel": "bungaku_theme_colors_panel"
+        }
+    },
+    "panels": {
+        "bungaku_theme_blog_panel": true,
+        "bungaku_theme_colors_panel": true,
+        "bungaku_theme_layout_panel": true,
+        "bungaku_theme_typography_panel": true
+    }
+}

@@ -1,0 +1,47 @@
+#!/usr/bin/env bash
+# BungAku-Lab entry point. Run `bin/lab help`.
+set -uo pipefail
+HERE="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+# shellcheck disable=SC1091
+. "$HERE/lib/common.sh"
+
+usage() {
+cat <<'USAGE'
+BungAku-Lab: a reusable WordPress test lab (PHP, MariaDB, WordPress core, Playwright).
+
+Setup
+  doctor                         check prerequisites and versions
+  install [--wp VER] [--source auto|zip|git|dir:PATH] [--no-browsers] [--browsers LIST]
+  up | down | status             start / stop the database and web server, show state
+  reset                          fresh database + WordPress install (core and builds stay)
+  clean [--all]                  delete reports and builds (--all: the whole .lab/ directory)
+
+Build and switch what is under test
+  build <target> [REF|latest] [--src DIR] [--zip FILE] [--label NAME]
+  verify <target> REF            compare the built zip with the published GitHub release asset
+  use <target> LABEL             put a build into WordPress and activate it
+  seed [--force]                 demo content: posts, pages, categories, menus, a media file
+  state <target> NAME [--mods JSON]   apply a named state (ltr | static | rtl | ...) and optional theme mods
+
+Test
+  test <suite|all> <target> [--label L] [--base L --allow FILE|none] [--mods-base JSON --mods-new JSON]
+       [--browsers LIST] [--grep TEXT] [--update] [--verbose]
+       suites: static  php  browser  parity
+  check <target> REF|latest [--base REF2 --allow FILE] [--rebuild] [--verify]   build + use + seed + test all (+ parity)
+  selftest <target> LABEL        plant faults in a copy and prove the suites catch them
+
+Tools
+  eval '<php code>' | eval FILE  run PHP inside WordPress
+  db [SQL]                       MariaDB shell or one query (own mode)
+  url                            print the site URL
+USAGE
+}
+
+cmd="${1:-help}"; shift || true
+case "$cmd" in
+  help|-h|--help) usage ;;
+  doctor|install|up|down|status|reset|clean|build|verify|use|seed|state|test|check|selftest|eval|db|url)
+    # shellcheck disable=SC1090
+    . "$HERE/lib/${cmd}.sh"; "lab_${cmd}" "$@" ;;
+  *) usage; exit 2 ;;
+esac

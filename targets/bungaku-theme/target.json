@@ -1,0 +1,70 @@
+{
+  "name": "bungaku-theme",
+  "type": "theme",
+  "slug": "bungaku-theme",
+  "repo": "https://github.com/bungakku/BungAku-Theme.git",
+  "release_url": "https://github.com/bungakku/BungAku-Theme/releases/download/{tag}/bungaku-theme-{tag}.zip",
+  "zip_name": "bungaku-theme-{label}.zip",
+
+  "build": {
+    "note": "Mirrors .github/workflows/release-zip.yml. `lab verify` proves the mirror against the published asset.",
+    "exclude": [".git", ".github", ".gitignore", ".distignore", "README.md", "theme_file-structure.txt", "node_modules", "*.zip", "build"],
+    "version_files": [
+      { "file": "style.css", "pattern": "^Version:.*", "replace": "Version: {version}" },
+      { "file": "readme.txt", "pattern": "^Stable tag:.*", "replace": "Stable tag: {version}" }
+    ]
+  },
+
+  "static": {
+    "main_file": "style.css",
+    "version_header": "Version",
+    "version_constant": { "file": "functions.php", "name": "BUNGAKU_THEME_VERSION" },
+    "readme_stable_tag": "readme.txt",
+    "changelog": "CHANGELOG.md",
+    "text_domain": "bungaku-theme",
+    "required_files": ["style.css", "functions.php", "index.php", "screenshot.png", "readme.txt", "rtl.css", "languages/bungaku-theme.pot"],
+    "forbidden_files": ["README.md", ".git", ".github", ".gitignore", ".distignore", "node_modules"],
+    "forbidden_content": [
+      { "pattern": "biswazit\\.in", "files": ["*.php", "*.js", "*.css", "*.json", "*.pot", "*.html"], "why": "the biswazit.in domain stays purged" },
+      { "pattern": "\\bmec_theme_|\\bMEC_THEME_|Mec_Theme_", "files": ["*.php", "*.js", "*.pot"], "why": "old code prefixes must not come back" }
+    ]
+  },
+
+  "php": {
+    "prefix_regex": "^(mec|bungaku)_theme_",
+    "customizer": true,
+    "inventory": "expected/bungaku-theme/inventory.json",
+    "checks": ["checks/accent-cases.php", "checks/updater.php"],
+    "mod_prefix": "bungaku_theme_",
+    "core_mods": ["custom_logo", "header_textcolor", "background_color", "nav_menu_locations"],
+    "transients": ["bungaku_theme_customizer_css"]
+  },
+
+  "setup": "setup.php",
+
+  "states": {
+    "ltr":    { "front": "posts" },
+    "static": { "front": "page" },
+    "rtl":    { "front": "posts", "rtl": true }
+  },
+
+  "pages": {
+    "home":   { "path": "/" },
+    "single": { "path": "/?p={post}" },
+    "page":   { "path": "/?page_id={page}" },
+    "cat":    { "path": "/?cat={cat}" },
+    "tag":    { "path": "/?tag=notice" },
+    "search": { "path": "/?s=lorem" },
+    "none":   { "path": "/?s=zzzz" },
+    "nf":     { "path": "/?p=99999", "status": 404 },
+    "author": { "path": "/?author=1" },
+    "paged":  { "path": "/?paged=2" }
+  },
+
+  "normalise": {
+    "strip_lines": ["bungaku-theme-build:"],
+    "replace": []
+  },
+
+  "axe": { "scope": "#masthead", "widths": [360, 1280], "pages": ["home", "single"], "fail_impacts": ["serious", "critical"] }
+}

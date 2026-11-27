@@ -1,0 +1,6 @@
+# Scripts must keep LF line endings, also on Windows checkouts (they run in Linux, WSL2 or Docker).
+* text=auto
+*.sh text eol=lf
+bin/* text eol=lf
+docker/* text eol=lf
+*.png binary

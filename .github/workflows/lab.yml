@@ -1,0 +1,94 @@
+# Lane A: BungAku-Lab on GitHub Actions. Run it by hand (Actions > lab > Run workflow) before publishing a release,
+# or leave the weekly schedule on to learn early when a new WordPress or PHP breaks the theme.
+name: lab
+
+on:
+  workflow_dispatch:
+    inputs:
+      target:
+        description: Target under targets/
+        default: bungaku-theme
+      ref:
+        description: Git tag to test (or "latest")
+        default: latest
+      base:
+        description: Previous tag for the parity suite (empty = skip parity)
+        default: ""
+      wp:
+        description: WordPress version (empty = versions.env, or "trunk")
+        default: ""
+  schedule:
+    - cron: "17 3 * * 1"   # Mondays 03:17 UTC
+
+concurrency:
+  group: lab-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  check:
+    name: PHP ${{ matrix.php }} / WP ${{ matrix.wp || 'pinned' }}
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    continue-on-error: ${{ matrix.experimental == true }}
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - { php: "8.3", wp: "" }
+          - { php: "8.4", wp: "" }
+          - { php: "8.1", wp: "" }
+          - { php: "8.3", wp: "trunk", experimental: true }
+          - { php: "7.4", wp: "", experimental: true }
+    services:
+      db:
+        image: mariadb:10.11
+        env:
+          MARIADB_ROOT_PASSWORD: root
+          MARIADB_DATABASE: wp
+          MARIADB_USER: wp
+          MARIADB_PASSWORD: wp
+        ports: ["3306:3306"]
+        options: >-
+          --health-cmd="healthcheck.sh --connect --innodb_initialized"
+          --health-interval=5s --health-timeout=5s --health-retries=20
+    env:
+      DB_MODE: external
+      DB_HOST: 127.0.0.1
+      DB_PORT: "3306"
+      DB_ROOT_USER: root
+      DB_ROOT_PASS: root
+      LAB_BROWSERS: chromium,firefox,webkit
+      TARGET: ${{ inputs.target || 'bungaku-theme' }}
+      REF: ${{ inputs.ref || 'latest' }}
+      BASE: ${{ inputs.base || '' }}
+      WP_VERSION_INPUT: ${{ matrix.wp || inputs.wp || '' }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php }}
+          extensions: mbstring, mysqli, dom, curl, zip, gd, intl, exif, fileinfo
+          coverage: none
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+      - run: npm ci
+      - name: Browsers
+        run: npx playwright install --with-deps chromium firefox webkit
+      - name: Install lab
+        run: |
+          [ -n "$WP_VERSION_INPUT" ] && export WP_VERSION="$WP_VERSION_INPUT"
+          bin/lab install --no-browsers
+      - name: Check
+        run: |
+          args=()
+          [ -n "$BASE" ] && args+=(--base "$BASE")
+          bin/lab check "$TARGET" "$REF" "${args[@]}"
+      - name: Upload reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: lab-reports-php${{ matrix.php }}-wp${{ matrix.wp || 'pinned' }}
+          path: .lab/reports
+          retention-days: 14

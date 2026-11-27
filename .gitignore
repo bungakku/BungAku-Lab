@@ -1,0 +1,6 @@
+.lab/
+node_modules/
+lab.env
+*.zip
+*.log
+test-results/

@@ -1,0 +1,62 @@
+# BungAku-Lab, Docker lane. Needs Docker Engine (Linux/WSL2) or Docker Desktop with at least 4 GB of RAM for the VM.
+#   docker compose run --rm lab doctor
+#   docker compose run --rm lab check bungaku-theme v1.8.0 --base v1.7.99
+#   docker compose run --rm --service-ports lab up     # then browse http://localhost:8080
+services:
+  db:
+    image: mariadb:${MARIADB_IMAGE_TAG:-10.11}
+    environment:
+      MARIADB_ROOT_PASSWORD: root
+      MARIADB_DATABASE: wp
+      MARIADB_USER: wp
+      MARIADB_PASSWORD: wp
+    command:
+      - --character-set-server=utf8mb4
+      - --collation-server=utf8mb4_unicode_520_ci
+      - --innodb-buffer-pool-size=64M
+      - --performance-schema=OFF
+    healthcheck:
+      test: ["CMD", "healthcheck.sh", "--connect", "--innodb_initialized"]
+      interval: 5s
+      timeout: 5s
+      retries: 24
+    volumes:
+      - db-data:/var/lib/mysql
+
+  lab:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+      args:
+        PLAYWRIGHT_VERSION: "1.63.0"
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      LAB_HOME: /lab-home
+      LAB_HOST: localhost
+      LAB_BIND: 0.0.0.0
+      LAB_PORT: "8080"
+      DB_MODE: external
+      DB_HOST: db
+      DB_PORT: "3306"
+      DB_NAME: wp
+      DB_USER: wp
+      DB_PASS: wp
+      DB_ROOT_USER: root
+      DB_ROOT_PASS: root
+      # Optional: WP_VERSION, WP_SOURCE, LAB_BROWSERS (chromium,firefox,webkit) are passed through when set on the host.
+      WP_VERSION: ${WP_VERSION:-}
+      WP_SOURCE: ${WP_SOURCE:-}
+      LAB_BROWSERS: ${LAB_BROWSERS:-}
+    ports:
+      - "8080:8080"
+    volumes:
+      - .:/lab
+      - lab-home:/lab-home
+      - node-modules:/lab/node_modules   # keeps host (Windows/macOS) node_modules out of the container
+
+volumes:
+  db-data:
+  lab-home:
+  node-modules:

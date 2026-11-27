@@ -1,0 +1,60 @@
+{
+  "_help": "Copy this folder to targets/<name>/, delete the _help keys, fill in the values. `bin/lab doctor` + `bin/lab build <name> --src DIR --label local` + `bin/lab test static <name>` is the quickest way to try it. See targets/README.md.",
+
+  "name": "my-plugin",
+  "type": "plugin",
+  "slug": "my-plugin",
+  "main": "my-plugin/my-plugin.php",
+  "repo": "https://github.com/OWNER/REPO.git",
+  "release_url": "https://github.com/OWNER/REPO/releases/download/{tag}/my-plugin-{tag}.zip",
+  "zip_name": "my-plugin-{label}.zip",
+
+  "build": {
+    "_help": "Files left out of the package. Mirror your release workflow; `bin/lab verify` proves the mirror against the published asset.",
+    "exclude": [".git", ".github", ".gitignore", ".distignore", "README.md", "node_modules", "*.zip", "tests"],
+    "version_files": [
+      { "file": "my-plugin.php", "pattern": "^\\s*\\*\\s*Version:.*", "replace": " * Version: {version}" },
+      { "file": "readme.txt", "pattern": "^Stable tag:.*", "replace": "Stable tag: {version}" }
+    ]
+  },
+
+  "static": {
+    "main_file": "my-plugin.php",
+    "version_header": "Version",
+    "version_constant": { "file": "my-plugin.php", "name": "MY_PLUGIN_VERSION" },
+    "readme_stable_tag": "readme.txt",
+    "changelog": "CHANGELOG.md",
+    "text_domain": "my-plugin",
+    "required_files": ["my-plugin.php", "readme.txt"],
+    "forbidden_files": ["README.md", ".git", ".github", "node_modules"],
+    "forbidden_content": [
+      { "pattern": "old-domain\\.example", "files": ["*.php", "*.js"], "why": "describe why this must never come back" }
+    ]
+  },
+
+  "php": {
+    "prefix_regex": "^my_plugin_",
+    "customizer": false,
+    "checks": [],
+    "mod_prefix": "my_plugin_",
+    "core_mods": [],
+    "transients": []
+  },
+
+  "setup": "setup.php",
+
+  "states": {
+    "ltr": { "front": "posts" },
+    "rtl": { "front": "posts", "rtl": true }
+  },
+
+  "pages": {
+    "home": { "path": "/" },
+    "single": { "path": "/?p={post}" },
+    "page": { "path": "/?page_id={page}" }
+  },
+
+  "normalise": { "strip_lines": [], "replace": [] },
+
+  "axe": { "scope": "", "widths": [360, 1280], "pages": ["home"], "fail_impacts": ["serious", "critical"] }
+}

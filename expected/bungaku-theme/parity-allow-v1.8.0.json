@@ -1,0 +1,7 @@
+{
+  "note": "v1.7.99 -> v1.8.0, default settings. The only intended markup change: the bundled default logo link is added inside the header (its line is reflowed). Every changed line on every page must match one of these rules.",
+  "rules": [
+    { "id": "bundled-logo-link-added", "match": "class=\"custom-logo-link\".*assets/images/bungaku-logo-mark\\.png" },
+    { "id": "site-text-line-reflowed", "match": "^\\s*<div class=\"site-text\">\\s*$" }
+  ]
+}
