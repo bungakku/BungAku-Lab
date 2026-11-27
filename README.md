@@ -28,12 +28,12 @@ Pick by what your machine can do. They all run the same suites.
 | Lane | How | Status in this repo |
 | --- | --- | --- |
 | **B. Linux native** (also WSL2 on Windows 11) | `bin/lab install` starts a private MariaDB (socket only, no TCP port) and PHP's built-in server | **Verified** on Ubuntu 24.04, PHP 8.3.6, MariaDB 10.11.14, Node 22, Playwright 1.63.0 with Chromium 158, WordPress 7.1.5 and 7.0.2 (BungAku-Theme v1.8.0 passes every suite on both) |
-| **A. GitHub Actions** | `.github/workflows/lab.yml`: PHP matrix, real MariaDB service, Chromium + Firefox + WebKit, reports as artifacts | ⚠ **Not run on GitHub yet.** `actionlint` is clean, and the same steps ran locally against a MariaDB over TCP (`DB_MODE=external`, PHP 8.3, WordPress 7.1.5, Chromium): every suite passes in about 75 s. The PHP matrix and Firefox/WebKit are still untested |
+| **A. GitHub Actions** | `.github/workflows/lab.yml`: PHP matrix, real MariaDB service, Chromium + Firefox + WebKit, reports as artifacts | **Verified** (run 4 min 45 s, 5 jobs in parallel): PHP 7.4, 8.1, 8.3, 8.4 on WordPress 7.1.5 and PHP 8.3 on WordPress trunk (7.3-alpha), each with Chromium, Firefox and WebKit. BungAku-Theme v1.8.0 vs v1.7.99 passes every suite on all five (static 22, php 29, browser 112, parity 30) |
 | **Docker** | `docker-compose.yml`: a `db` service (MariaDB) and a `lab` service (PHP + Node + Playwright image) | ⚠ **Not run.** `docker compose config` accepts the file; no Docker daemon was available to build or start it |
 
 Not included: a WordPress Playground lane. Playground runs PHP as WebAssembly on SQLite, which differs from production (MariaDB), so it would not test what you ship.
 
-Not verified anywhere yet: Firefox and WebKit, PHP 7.4 / 8.1 / 8.4, WordPress trunk and WordPress older than 7.0, Windows. Lane A is where those are meant to be tested.
+Not verified yet: WordPress older than 7.0, Windows, the Docker lane, and real Safari (WebKit is the engine, not the browser). Run the workflow by hand: Actions > lab > Run workflow, give the tag and the previous tag.
 
 **Windows 10 note.** Playwright's supported systems are Windows 11, Windows Server 2019+ and WSL. On Windows 10, or on a machine with about 4 GB of RAM, use Lane A (GitHub Actions) or a Linux install. Docker Desktop on Windows needs about 8 GB for its virtual machine.
 

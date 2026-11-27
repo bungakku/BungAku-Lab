@@ -21,7 +21,10 @@ const walk = (suite, trail) => {
         continue;
       }
       fail++;
-      const msg = ((r.error && r.error.message) || 'failed').replace(/\u001b\[[0-9;]*m/g, '').split('\n').filter(Boolean)[0];
+      const lines = ((r.error && r.error.message) || 'failed').replace(/\u001b\[[0-9;]*m/g, '').split('\n').map((l) => l.trim()).filter(Boolean);
+      // First line plus the Expected/Received pair, so a CI log alone shows what differed.
+      const detail = lines.filter((l) => /^(Expected|Received)\b/.test(l)).join(' ');
+      const msg = lines[0] + (detail ? ` | ${detail}` : '');
       console.log(`  FAIL [${t.projectName}] ${[...trail, spec.title].join(' > ')} :: ${msg}`);
     }
   }
