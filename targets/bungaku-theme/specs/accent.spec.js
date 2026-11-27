@@ -24,10 +24,11 @@ test('default accent colour is #cc4a0a and passes 4.5:1 on the header background
 test('title is 20.8px up to 480px, 24px from 481px and 28.8px from 769px', async ({ page }) => {
   setState('ltr', { title_accent_text: 'Aku' });
   await page.goto('/', { waitUntil: 'load' });
-  for (const [w, size] of [[360, '20.8px'], [480, '20.8px'], [481, '24px'], [768, '24px'], [769, '28.8px'], [1280, '28.8px']]) {
+  // Engines round 1.3rem differently (Chromium 20.8px, Firefox 20.8125px, WebKit 20.799999px), so compare numbers.
+  for (const [w, size] of [[360, 20.8], [480, 20.8], [481, 24], [768, 24], [769, 28.8], [1280, 28.8]]) {
     await page.setViewportSize({ width: w, height: 800 });
     await page.waitForTimeout(150);
-    expect((await accentStyle(page)).size, `font size at ${w}px`).toBe(size);
+    expect(parseFloat((await accentStyle(page)).size), `font size at ${w}px`).toBeCloseTo(size, 1);
   }
 });
 
