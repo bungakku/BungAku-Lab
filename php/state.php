@@ -21,7 +21,7 @@ if ( ! $ids ) {
 }
 // Start from the same site identity every time, even when an earlier run stopped half way.
 update_option( 'blogname', get_option( 'lab_site_name', 'BungAku Lab' ) );
-update_option( 'blogdescription', get_option( 'lab_site_tagline', 'Just another WordPress site' ) );
+update_option( 'blogdescription', get_option( 'lab_site_tagline', '' ) );
 if ( 'theme' === $t['type'] ) {
 	delete_option( 'theme_mods_' . $t['slug'] );
 }
