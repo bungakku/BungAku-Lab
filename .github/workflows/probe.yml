@@ -1,0 +1,10 @@
+name: probe
+on:
+  push:
+    branches: [feat/ecosystem-p0]
+    paths: [".github/workflows/probe*.yml"]
+permissions:
+  contents: read
+jobs:
+  call:
+    uses: bungakku/bungaku-lab/.github/workflows/probe-called.yml@feat/ecosystem-p0

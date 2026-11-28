@@ -1,0 +1,19 @@
+name: probe-called
+on:
+  workflow_call:
+permissions:
+  contents: read
+jobs:
+  show:
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Contexts
+        env:
+          JOB: ${{ toJSON(job) }}
+          GH_WF_REF: ${{ github.workflow_ref }}
+          GH_WF_SHA: ${{ github.workflow_sha }}
+          GH_SHA: ${{ github.sha }}
+          GH_REPO: ${{ github.repository }}
+        run: |
+          echo "job context:"; echo "$JOB"
+          echo "github.workflow_ref=$GH_WF_REF"; echo "github.workflow_sha=$GH_WF_SHA"; echo "github.sha=$GH_SHA"; echo "github.repository=$GH_REPO"
