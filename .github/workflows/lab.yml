@@ -39,6 +39,8 @@ jobs:
           - { php: "8.1", wp: "" }
           - { php: "8.3", wp: "trunk", experimental: true }
           - { php: "7.4", wp: "", experimental: true }
+          # Floor: the oldest WordPress the theme declares (readme.txt "Requires at least: 5.0") on the newest PHP it runs on. Chromium only.
+          - { php: "7.3", wp: "5.0", browsers: "chromium", experimental: true }
     services:
       db:
         image: mariadb:10.11
@@ -57,7 +59,7 @@ jobs:
       DB_PORT: "3306"
       DB_ROOT_USER: root
       DB_ROOT_PASS: root
-      LAB_BROWSERS: chromium,firefox,webkit
+      LAB_BROWSERS: ${{ matrix.browsers || 'chromium,firefox,webkit' }}
       TARGET: ${{ inputs.target || 'bungaku-theme' }}
       REF: ${{ inputs.ref || 'latest' }}
       BASE: ${{ inputs.base || '' }}
@@ -75,7 +77,7 @@ jobs:
           cache: npm
       - run: npm ci
       - name: Browsers
-        run: npx playwright install --with-deps chromium firefox webkit
+        run: npx playwright install --with-deps ${LAB_BROWSERS//,/ }
       - name: Install lab
         run: |
           [ -n "$WP_VERSION_INPUT" ] && export WP_VERSION="$WP_VERSION_INPUT"
